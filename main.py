@@ -15,7 +15,7 @@ def decode(password):
     decoded_password = ""
     for digit in password:
         # Converts the character to an integer, subtracts 3 from each, and appends to an empty string
-        decoded_digit = str(int(digit) - 3)
+        decoded_digit = str((int(digit) - 3) % 10)
         decoded_password += decoded_digit
     return decoded_password
 
@@ -30,6 +30,6 @@ if __name__ == '__main__':
         elif user_choice == '1':
             encoded_pass = encode()  # Assigns the encoded password string for further use
         elif user_choice == '2':
-            decoded_pass = decode(encoded_pass)
+            decoded_pass = decode(encoded_pass) # Decodes the stored encoded password
             print(f'The encoded password is {encoded_pass}, and the original password is {decoded_pass}.')
     exit()
