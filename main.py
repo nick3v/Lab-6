@@ -6,7 +6,7 @@ def main():
 def encode():
     user_pass = list(input('Please enter your password to encode: '))  # List to iterate each number
     for i in range(len(user_pass)):
-        user_pass[i] = str(int(user_pass[i]) + 3)  # Changes each element to an integer, adds 3, then back to string
+        user_pass[i] = str((int(user_pass[i]) + 3) % 10)  # Changes each element to an integer, adds 3, then back to string
     print('Your password has been encoded and stored!')
     return ''.join(user_pass)  # Returns a string of the encoded password
 
